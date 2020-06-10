@@ -9,44 +9,26 @@
 ```
 root@p4:/home/p4/Downloads# cat mycurl.sh
 #!/bin/bash
-
-
 ok=/tmp/ok.txt
-
 fail=/tmp/fail.txt
-
 >$ok
-
 >$fail
-
-
 for i in {1..100}
-
 do
 
         curl --connect-timeout 1 http://10.0.1.254/a.htm &>/dev/null
-
         if [ $? -eq 0 ]; then  #If success do = If  0 do
-
                 echo "curl ok" >> $ok   #put result in /temp/ok
-
         else
-
                 echo "curl fail" >> $fail
-
         fi
-
 done
 
 
 echo "all finish..."
-
 yes=`wc -l $ok`
-
 no=`wc -l $fail`
-
 echo "ok:" $yes
-
 echo "fail:" $no
 ```
 
@@ -71,7 +53,7 @@ echo "fail:" $no
 >HAProxy是一個使用C語言編寫的自由及開放原始碼軟體，其提供高可用性、負載均衡，以及基於TCP和HTTP的應用程式代理。
 GitHub、Bitbucket、Stack Overflow、Reddit、Tumblr、Twitter和 Tuenti在內的知名網站，及亞馬遜網路服務系統都使用了HAProxy。
 
-awk,gred,sed Linux三元素
+awk,gred,sed Linux三元素 [研究網站](https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/392291/)
 -
 ```
 root/~#sed 
@@ -82,8 +64,10 @@ root/~#sed -i
 #sed -i '/^$/d' 檔案名稱
 // 刪除空行
 ```
+
 刪除空行
--
+=
+
 ```
 #sed -i '/^$/d' 檔案名稱
 // 刪除空行
@@ -125,24 +109,14 @@ vagrant
 p4
 ```
 
+* sed -i '20d' a.txt     // 刪除第20行
+* sed -i '10,20d' a.txt // 刪除10到第20行
 
 
+* sed -i '/^ntp/d' a.txt // 刪除開頭為ntp的行數
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* sed -i '10,/^user/d' a.txt // 刪除從第10行到開頭為user的行數
+```
+a: 增加
+sed '1a drink tea' ab #第一行後增加字串"drink tea"
+```
