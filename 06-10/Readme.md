@@ -43,7 +43,7 @@ echo "fail:" $no
 ```
 
 下載haproxy
--
+=
 安裝流程
 ```
 # apt-get update
@@ -54,7 +54,7 @@ echo "fail:" $no
 GitHub、Bitbucket、Stack Overflow、Reddit、Tumblr、Twitter和 Tuenti在內的知名網站，及亞馬遜網路服務系統都使用了HAProxy。
 
 awk,gred,sed Linux三元素 [研究網站](https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/392291/)
--
+=
 ```
 root/~#sed 
 //stream editor
@@ -81,7 +81,9 @@ root/~#sed -i
 
 <img src="https://github.com/TKTim/Linux-Note-/blob/master/06-10/4.png"  width="700" height="700">
 
->問題: 取出一般使用者名稱
+問題: 取出一般使用者名稱
+=
+
 ```
 root@p4:/home/p4/test-lvs# cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
@@ -93,14 +95,15 @@ games:x:5:60:games:/usr/games:/usr/sbin/nologin
 man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
 以下省略...
 ```
-但是我們只要名稱。 
-grep "/bin/bash" , 選出有相符字串
+但是我們只要使用者名稱。 
 
-grep -v "root" , --invert-match        select non-matching lines
+<kbd>grep "/bin/bash"</kbd>, 選出有相符字串
 
-awk -F: '{print $1}', 顯示第一位值
+<kbd>grep -v "root"</kbd> , --invert-match        select non-matching lines
 
-awk -F, fs                   --field-separator=fs
+<kbd>awk -F: '{print $1}' </kbd>, 顯示第一位值
+
+<kbd>awk -F</kbd>, fs    --field-separator=fs
 
 
 ```
@@ -108,6 +111,8 @@ root@p4:/home/p4/test-lvs# cat /etc/passwd | grep "/bin/bash" | grep -v "root" |
 vagrant
 p4
 ```
+補充
+=
 
 * sed -i '20d' a.txt     // 刪除第20行
 * sed -i '10,20d' a.txt // 刪除10到第20行
@@ -116,7 +121,30 @@ p4
 * sed -i '/^ntp/d' a.txt // 刪除開頭為ntp的行數
 
 * sed -i '10,/^user/d' a.txt // 刪除從第10行到開頭為user的行數
+
+a: 增加 ， 轉譯
+=
 ```
 a: 增加
-sed '1a drink tea' ab #第一行後增加字串"drink tea"
+sed '1a drink tea' 檔案名稱 //第一行後增加字串"drink tea"
+sed -i '$a do' 檔案名稱     //在最後一行加do
+
+
+
+
+轉譯:(想刪除/*為開頭的字串)
+sed -i '/^\/*/d' 檔案名稱
+若想處理的字串中有 "  /   "，會與我們的處理符號 "   //   "搞混，因此多增加"  \   "
+1. sed -i '/^/d'   //鎖定開頭，刪除符號
+2. sed -i '/^/*/d' //加入想刪除的字符
+3. sed -i '/^\/*/d' //在字符前加上 "  \   " 
+```
+s: 取代 ，g:不斷匹配
+=
+```
+sed -i 's/p4/P4' 檔案名稱 // 將P4取代掉p4
+sed -i 's/p4/P4/g' 檔案名稱 //若沒有g，則指取代找到的第一行
+sed -i 's/p4/P4/g'
+
+sed -i '/do/s/do/does/g' ggg.txt  //找出do將do換成does
 ```
