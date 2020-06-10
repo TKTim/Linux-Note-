@@ -52,8 +52,8 @@ echo "fail:" $no
 
 建立[test-haproxy.py] & [haproxy.cfg]
 -
-![image1]()
-![image2]()
+<img src="https://github.com/TKTim/Linux-Note-/blob/master/06-10/1.png"  width="800" height="800">
+<img src="https://github.com/TKTim/Linux-Note-/blob/master/06-10/2.png"  width="600" height="400">
 
 記得將Docker改成上次安裝的檔案，還沒裝的輸入:
 ```
@@ -82,6 +82,21 @@ root/~#sed -i
 #sed -i '/^$/d' 檔案名稱
 // 刪除空行
 ```
+刪除空行
+-
+```
+#sed -i '/^$/d' 檔案名稱
+// 刪除空行
+```
+
+## 前:
+
+<img src="https://github.com/TKTim/Linux-Note-/blob/master/06-10/3.png"  width="700" height="700">
+
+## 後:
+
+<img src="https://github.com/TKTim/Linux-Note-/blob/master/06-10/4.png"  width="700" height="700">
+
 >問題: 取出一般使用者名稱
 ```
 root@p4:/home/p4/test-lvs# cat /etc/passwd
