@@ -5,6 +5,23 @@ VM1:
 客戶端:
 VM2, VM3
 
+### LVS(Linux Virtual Server)
+> 如架設概念圖，可以看到 LVS擔任主機搭載了負載均衡的功能，而要實作它，便要用到Linux目前內設的ipvsadm
+這邊有一些介紹的網站，裡面也包括了指令集
+[參考網站一](https://www.cnblogs.com/klb561/p/9215704.html)，
+[參考網站二](https://www.jianshu.com/p/20f034f8c076)。
+
+### 在這裡給出一些常看到的指令:
+```
+-A --add-service添加一條新的虛擬服務
+-t | -uTCP / UDP協議的虛擬服務
+-s配置負載均衡算法，如：rr，wrr，lc等
+RR:
+輪詢調度(Round Robin 簡稱'RR')算法就是按依次循環的方式將請求調度到不同的服務器上，該算法最大的特點就是實現簡單。輪詢算法假設所有的服務器處理請求的能力都一樣的，調度器會將所有的請求平均分配給每個真實服務器。
+```
+
+
+
 ### 架設概念圖:
 
 <img src="https://github.com/TKTim/Linux-Note-/blob/master/05-27--%E9%99%84%E8%BC%89%E5%9D%87%E8%A1%A1--ipvsadm/1.JPG"  width="600" height="650">
