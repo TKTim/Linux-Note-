@@ -100,7 +100,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 p1.sh 進化版
 =
 
-再之前的檔案增加這幾行:
+在之前的檔案增加這幾行:
 
 ```
 # yum -y install ntp
@@ -117,6 +117,31 @@ systemctl restart crond.service
 校對時間的資料: [NTP同步](https://blog.gtwang.org/linux/linux-ntp-installation-and-configuration-tutorial/)
 
 
+p2.sh
+=
+
+```
+#!/bin/bash
+
+#echo "ulimit -SHn 102400" >> /etc/rc.local 
+#cat >> /etc/security/limits.conf << EOF 
+#* soft nofile 655350 
+#* hard nofile 655350 
+#EOF
+
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+# 使用sed 轉換字元， 前者改成後者
+setenforce 0 
+
+systemctl disable firewalld.service 
+systemctl stop firewalld.service
+
+sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+# 這行是拿來，在你使用putty連線ssh時，對方無法直接使用root連線。
+systemctl restart sshd
+
+```
+![img2](https://github.com/TKTim/Linux-Note-/blob/master/06-17%20%E8%85%B3%E6%9C%AC/2.png)
 
 
 
