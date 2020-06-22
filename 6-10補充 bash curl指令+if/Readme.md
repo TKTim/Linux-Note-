@@ -1,5 +1,6 @@
-1. 建立httpd
+1.建立httpd
 =
+
 
 ```
 # yum install httpd
@@ -12,7 +13,7 @@ Hello You are right
 ```
 
 
-2. 創立 mycurl.sh
+2.創立 mycurl.sh
 =
 
 [root@node02 Downloads]# vim mycurl.sh
@@ -53,7 +54,7 @@ echo "fail:" $no
 
 ```
 
-3. Result
+3.Result
 =
 ```
 # ./mycurl.sh
