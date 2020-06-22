@@ -59,6 +59,7 @@ echo "fail:" $no
 # ./mycurl.sh
 ```
 
+![img](https://github.com/TKTim/Linux-Note-/blob/master/6-10%20bash%20curl%E6%8C%87%E4%BB%A4%2Bif/2.png)
 
 
 
