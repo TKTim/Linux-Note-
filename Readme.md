@@ -1,10 +1,10 @@
 Linux上課筆記
 =
 
-<img src="https://github.com/TKTim/Linux-Note-/blob/master/16685bb25412e9e422f002f5062c7036a39e23c2v2_00.jpg">
-
 ### 這裡是從5/27後的筆記，5/27前的筆記在這裡:
 [Tim Lee's daily factory](https://timleesdailyfactory.blogspot.com/search/label/Linux)
+<a href="https://timleesdailyfactory.blogspot.com/search/label/Linux" style="font-size:40px">我的網站</a>
 
+<img src="https://github.com/TKTim/Linux-Note-/blob/master/16685bb25412e9e422f002f5062c7036a39e23c2v2_00.jpg">
 ### (本網頁資料皆為本人撰寫，如需參考請附上網址)
 
